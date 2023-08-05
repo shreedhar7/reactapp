@@ -1,11 +1,38 @@
-import React from 'react'
+import React , {useState} from 'react'
 import {View , Text , TextInput , StyleSheet , StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard} from 'react-native'
 
 
-const App = () => {
-const dismissKeyboard = () => {
-        Keyboard.dismiss();
+const App = ({navigation}) => {
+        const [inputValue, setInputValue] = useState('');
+        const [inputValue2, setInputValue2] = useState('');
+        const [errorMessage, setErrorMessage] = useState('');
+        const [errorMessage2, setErrorMessage2] = useState('');
+        const dismissKeyboard = () => {
+           Keyboard.dismiss();
         }
+        const home = () => {
+           if (inputValue.trim() === '' ) {
+                setErrorMessage('* User name field should not be empty');
+              }
+          else if (  inputValue2.trim() === '' ) {
+            setErrorMessage2('* Please enter the password');
+          }
+           else {navigation.navigate( 'Home' )}
+        }
+        const handleRegister1 = () => {
+           navigation.navigate( 'Register1' )
+        }
+        const login = () => {
+           navigation.navigate( 'login' )
+        }
+        const handleInputChange = (text) => {
+            setInputValue(text);
+            setErrorMessage('');
+         };
+         const handleInputChange2 = (text2) => {
+            setInputValue2(text2);
+            setErrorMessage2('');
+         };
    return (
 //
       <TouchableWithoutFeedback onPress={dismissKeyboard}>
@@ -23,29 +50,34 @@ const dismissKeyboard = () => {
             </Text>
          </View>
          <View style={styles.cont3}>
-            <Text style={styles.text3}>Email address</Text>
+            <Text style={styles.text3}>User name</Text>
             <TextInput
                style={styles.textInput}
-               placeholder = "  Enter email"
+               placeholder = "  Enter user name"
+               value={inputValue}
+               onChangeText={handleInputChange}
             />
+            {errorMessage !== '' && <Text style={{ color: 'red' }}>{errorMessage}</Text>}
             <Text style={styles.text3}>Create Password</Text>
             <TextInput
                style={styles.textInput}
                placeholder = "  Enter password"
+               value={inputValue2}
+               onChangeText={handleInputChange2}
                secureTextEntry
             />
-
-            <TouchableOpacity style={styles.touchable}>
+            {errorMessage2 !== '' && <Text style={{ color: 'red' }}>{errorMessage2}</Text>}
+            <TouchableOpacity style={styles.touchable} onPress={home}>
                <Text style={styles.touch}>Create account</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleRegister1}>
               <Text style={styles.register}> Back to previous</Text>
            </TouchableOpacity>
             <View style={styles.footer}>
                <Text>
                   Already have an account ?
                </Text>
-               <TouchableOpacity>
+               <TouchableOpacity onPress={login}>
                   <Text style={styles.register}> Login</Text>
                </TouchableOpacity>
             </View>
