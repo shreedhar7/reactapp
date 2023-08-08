@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-import {View , Text , TextInput , StyleSheet , StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard} from 'react-native'
+import {View , Text , TextInput , StyleSheet , StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard ,Alert} from 'react-native'
 
 
 const App = ({navigation}) => {
@@ -12,13 +12,29 @@ const App = ({navigation}) => {
         }
 
         const handleLogin = () => {
-            if (inputValue.trim() === '' ) {
-                 setErrorMessage('* User name field should not be empty');
+              if (inputValue.trim() === '' ) {
+                setErrorMessage('* First name field should not be empty');
+              }
+              else if (  inputValue2.trim() === '' ) {
+                setErrorMessage2('* Last name field should not be empty');
+              }
+             else if (inputValue === 'admin' && inputValue2 === '12345') {
+                 navigation.navigate('Home' );
                }
-           else if (  inputValue2.trim() === '' ) {
-             setErrorMessage2('* Please enter the password');
-           }
-           else {navigation.navigate( 'Home' )}
+               else if(inputValue === 'shreedhar' && inputValue2 === 'shree'){
+                  navigation.navigate('Home' );
+               }
+               else if(inputValue === 'rajaganapathi' && inputValue2 === 'rj'){
+                  navigation.navigate('Home' );
+               }
+               else if(inputValue === 'ragul' && inputValue2 === 'dev'){
+                   navigation.navigate('Home' );
+               }
+
+               else {
+                 Alert.alert('OOPS' , 'Invalid username and password. Please try again.');
+               }
+
         }
         const handleRegister1 = () => {
            navigation.navigate( 'Register1' )
@@ -136,7 +152,7 @@ const styles=StyleSheet.create({
       borderWidth: 1,
       borderColor: 'black',
       borderRadius: 8,
-      marginBottom: 12,
+      marginBottom: 10,
       padding: 10,
       marginVertical: 10,
 

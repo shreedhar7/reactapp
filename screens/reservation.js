@@ -7,14 +7,14 @@ const App = () => {
 
   return (
   <View>
-     <Text>Reserve your table for the party</Text>
+     <Text style={styles.heading}>Reserve your table for the party</Text>
      <Calendar
      style={{
          borderWidth: 2,
          borderColor: 'red',
          padding : 5,
          marginHorizontal : 10,
-         marginVertical : 30
+         marginVertical : 20
 
        }}
        onDayPress={day => {
@@ -28,5 +28,14 @@ const App = () => {
 
   );
 };
+styles = StyleSheet.create({
+   heading: {
+      fontSize : 20,
+      marginLeft : 30,
+      marginTop : 10,
+      fontWeight : 'bold',
+      color : 'red',
+   }
+})
 
 export default App;
