@@ -14,7 +14,7 @@ const App = () => {
          borderColor: 'red',
          padding : 5,
          marginHorizontal : 10,
-         marginVertical : 20
+         marginVertical : 21
 
        }}
        onDayPress={day => {
@@ -30,7 +30,7 @@ const App = () => {
 };
 styles = StyleSheet.create({
    heading: {
-      fontSize : 20,
+      fontSize : 21,
       marginLeft : 30,
       marginTop : 10,
       fontWeight : 'bold',

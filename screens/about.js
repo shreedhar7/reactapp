@@ -6,25 +6,25 @@ import {  Feather } from '@expo/vector-icons';
 
 const Home = ({navigation}) => {
 
-//    useEffect(() => {
-//        const backAction = () => {
-//          Alert.alert('Hold on!', 'Are you sure you want to exit app?', [
-//            {
-//              text: 'Cancel',
-//              onPress: () => null,
-//              style: 'cancel',
-//            },
-//            {text: 'YES', onPress: () => BackHandler.exitApp()},
-//          ]);
-//          return true;
-//        };
-//
-//        const backHandler = BackHandler.addEventListener(
-//          'hardwareBackPress',
-//          backAction,
-//        );
-//        return () => backHandler.remove();
-//      }, []);
+    useEffect(() => {
+        const backAction = () => {
+          Alert.alert('Hold on!', 'Are you sure you want to exit app?', [
+            {
+              text: 'Cancel',
+              onPress: () => null,
+              style: 'cancel',
+            },
+            {text: 'YES', onPress: () => BackHandler.exitApp()},
+          ]);
+          return true;
+        };
+
+        const backHandler = BackHandler.addEventListener(
+          'hardwareBackPress',
+          backAction,
+        );
+        return () => backHandler.remove();
+      }, []);
        const [isLoading, setLoading] = useState(true);
         const [data, setData] = useState([]);
 
@@ -52,7 +52,7 @@ const Home = ({navigation}) => {
         <View>
         <Text style={styles.itemText}>{name}</Text>
 
-        <Text style={styles.itemText}>{'$' + price}</Text>
+        <Text style={styles.itemText2}>{'$' + price}</Text>
         </View>
           <Image
              source={{ uri: `https://github.com/Meta-Mobile-Developer-PC/Working-With-Data-API/blob/main/images/${image}?raw=true` }}
@@ -71,7 +71,7 @@ const Home = ({navigation}) => {
          };
          const order = () => {
 
-           navigation.navigate( 'Order' )
+           navigation.navigate( 'Search' )
          };
    return (
 
@@ -139,7 +139,7 @@ styles= StyleSheet.create({
    },
    headerImage : {
          resizeMode: 'cover',
-        height: 50,
+        height: 51,
         width: 50,
         marginHorizontal : 2,
 
@@ -158,7 +158,7 @@ styles= StyleSheet.create({
          justifyContent: 'space-between',
          backgroundColor : "white",
          flexDirection: 'row',
-         padding : 10,
+         padding : 11,
 
 
       },
@@ -236,7 +236,13 @@ styles= StyleSheet.create({
            itemText: {
                color: 'red',
                fontSize: 19,
-               marginTop : 5
+               marginTop : 5,
+               fontWeight : 'bold'
+           },
+           itemText2: {
+               color: 'black',
+               fontSize: 18,
+               marginTop : 5,
            },
            image3 : {
               height: 70,

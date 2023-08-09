@@ -29,7 +29,7 @@ const Home = ({navigation}) => {
                ),
              }}
              />
-          <Tab.Screen name="Order" component={order}
+          <Tab.Screen name="Search" component={order}
              options={{
                 tabBarIcon: ({ color }) => (
                   <Feather name="search" color={color} size={22}  />
