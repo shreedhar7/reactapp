@@ -12,7 +12,7 @@ import  about from './about';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const Home = ({navigation}) => {
+const Home = ({navigation , route}) => {
 
 
    return (

@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-import {View , Text , TextInput , StyleSheet , StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard ,Alert} from 'react-native'
+import {View , Text , TextInput , StyleSheet ,ImageBackground, StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard ,Alert} from 'react-native'
 
 
 const App = ({navigation}) => {
@@ -19,7 +19,7 @@ const App = ({navigation}) => {
                 setErrorMessage2('* Last name field should not be empty');
               }
              else if (inputValue === 'admin' && inputValue2 === '12345') {
-                 navigation.navigate('Home' );
+                 navigation.navigate('Home' ,{value: (inputValue)});
                }
                else if(inputValue === 'shreedhar' && inputValue2 === 'shree'){
                   navigation.navigate('Home' );
@@ -53,6 +53,7 @@ const App = ({navigation}) => {
       <ScrollView styles={{flex : 1}}>
 
       <View style={styles.container}>
+      <ImageBackground source={require('../assets/wall2.jpg')}  >
          <StatusBar  backgroundColor = "#ff0000"  barStyle = "dark-content"   />
          <View style={styles.header}>
             <Image style={styles.headerImage} source={require('../assets/modo-logo.png')}/>
@@ -60,7 +61,7 @@ const App = ({navigation}) => {
          </View>
          <View style={styles.cont2}>
             <Text style={styles.text2}>
-               Let us get to know you
+               Happiness in every bite
             </Text>
          </View>
          <View style={styles.cont3}>
@@ -85,7 +86,7 @@ const App = ({navigation}) => {
                <Text style={styles.touch}>Login</Text>
             </TouchableOpacity>
             <View style={styles.footer}>
-               <Text>
+               <Text style={{color : 'white' , fontSize:15}}>
                   Don`t have an account ?
                </Text>
                <TouchableOpacity onPress={handleRegister1}>
@@ -94,6 +95,7 @@ const App = ({navigation}) => {
             </View>
 
          </View>
+         </ImageBackground>
       </View>
       </ScrollView>
       </TouchableWithoutFeedback>
@@ -135,7 +137,9 @@ const styles=StyleSheet.create({
       marginTop:100
    },
    text2 : {
-      fontSize : 25
+      fontSize : 28,
+      color : 'white',
+      fontStyle : 'italic'
    },
    cont3 : {
       flex : 1,
@@ -144,10 +148,11 @@ const styles=StyleSheet.create({
       marginTop:100
    },
    text3 : {
-      fontSize : 20
+      fontSize : 20,
+      color : 'white'
    },
    textInput : {
-      width: '80%',
+      width: '70%',
       height: 40,
       borderWidth: 1,
       borderColor: 'black',
@@ -180,7 +185,9 @@ const styles=StyleSheet.create({
       flexDirection: 'row',
    },
    register : {
-      color : '#ff0000'
+      color : 'yellow',
+      fontWeight : 'bold',
+      fontSize : 15
    }
 
 })

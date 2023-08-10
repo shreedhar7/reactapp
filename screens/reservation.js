@@ -14,7 +14,7 @@ const App = () => {
          borderColor: 'red',
          padding : 5,
          marginHorizontal : 10,
-         marginVertical : 21
+         marginVertical : 20
 
        }}
        onDayPress={day => {

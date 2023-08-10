@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-import {View , Text , TextInput , StyleSheet , StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard} from 'react-native'
+import {View , Text , TextInput , StyleSheet,ImageBackground , StatusBar , Image , ScrollView , Button , TouchableOpacity,TouchableWithoutFeedback,Keyboard} from 'react-native'
 
 
 const App = ({navigation}) => {
@@ -39,6 +39,7 @@ const App = ({navigation}) => {
       <ScrollView styles={{flex : 1}}>
 
       <View style={styles.container}>
+      <ImageBackground source={require('../assets/wall2.jpg')} >
          <StatusBar  backgroundColor = "#ff0000"  barStyle = "dark-content"   />
          <View style={styles.header}>
             <Image style={styles.headerImage} source={require('../assets/modo-logo.png')}/>
@@ -74,7 +75,7 @@ const App = ({navigation}) => {
               <Text style={styles.register}> Back to previous</Text>
            </TouchableOpacity>
             <View style={styles.footer}>
-               <Text>
+               <Text style={{color : 'white' , fontSize : 17}}>
                   Already have an account ?
                </Text>
                <TouchableOpacity onPress={login}>
@@ -83,6 +84,7 @@ const App = ({navigation}) => {
             </View>
 
          </View>
+         </ImageBackground>
       </View>
       </ScrollView>
       </TouchableWithoutFeedback>
@@ -123,7 +125,8 @@ const styles=StyleSheet.create({
       marginTop:100
    },
    text2 : {
-      fontSize : 25
+      fontSize : 25,
+      color : 'white'
    },
    cont3 : {
       flex : 1,
@@ -132,7 +135,8 @@ const styles=StyleSheet.create({
       marginTop:100
    },
    text3 : {
-      fontSize : 20
+      fontSize : 20,
+      color : 'white'
    },
    textInput : {
       width: '80%',
@@ -166,10 +170,11 @@ const styles=StyleSheet.create({
       marginBottom : 280,
       marginTop : 30,
       flexDirection: 'row',
+
    },
    register : {
-      color : '#ff0000',
-
+      color : 'yellow',
+       fontSize : 17
    }
 
 })
