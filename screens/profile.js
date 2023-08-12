@@ -3,7 +3,7 @@ import {View , Text , StyleSheet , Button  ,TextInput,Image ,TouchableOpacity,Ke
 import * as ImagePicker from 'expo-image-picker';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-const Profile = ({ route}) => {
+const Profile = ({route}) => {
    const [image, setImage] = useState(null);
      const dismissKeyboard = () => {
         Keyboard.dismiss();
@@ -132,7 +132,7 @@ styles= StyleSheet.create({
       backgroundColor : 'white'
    },
    headText : {
-      fontSize : 21,
+      fontSize : 20,
       fontWeight : 'bold',
       marginTop : 5,
       marginLeft : 150,
@@ -212,7 +212,7 @@ styles= StyleSheet.create({
    },
    logout : {
       borderWidth : 2,
-      marginLeft : 125,
+      marginLeft : 124,
       height : 34,
       width : 80,
       alignItems: 'center',

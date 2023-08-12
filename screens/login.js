@@ -18,16 +18,19 @@ const App = ({navigation}) => {
               else if (  inputValue2.trim() === '' ) {
                 setErrorMessage2('* Last name field should not be empty');
               }
-             else if (inputValue === 'admin' && inputValue2 === '12345') {
+             else if (inputValue === 'admin' || inputValue === 'Admin' && inputValue2 === '12345') {
                  navigation.navigate('Home' ,{value: (inputValue)});
                }
-               else if(inputValue === 'shreedhar' && inputValue2 === 'shree'){
+               else if(inputValue === 'shreedhar' || inputValue === 'Admin' && inputValue2 === 'dev1'){
                   navigation.navigate('Home' );
                }
-               else if(inputValue === 'rajaganapathi' && inputValue2 === 'rj'){
+               else if(inputValue === 'rajaganapathi' || inputValue === 'Admin' && inputValue2 === 'rg'){
                   navigation.navigate('Home' );
                }
-               else if(inputValue === 'ragul' && inputValue2 === 'dev'){
+               else if(inputValue === 'Sarath' || inputValue === 'sarath' && inputValue2 === 'dev2'){
+                   navigation.navigate('Home' );
+               }
+               else if(inputValue === 'karthi' || inputValue === 'Karthi' && inputValue2 === 'dev3'){
                    navigation.navigate('Home' );
                }
 
@@ -57,7 +60,7 @@ const App = ({navigation}) => {
          <StatusBar  backgroundColor = "#ff0000"  barStyle = "dark-content"   />
          <View style={styles.header}>
             <Image style={styles.headerImage} source={require('../assets/modo-logo.png')}/>
-            <Text style={styles.headerText}>Modo Restaurant</Text>
+            <Text style={styles.headerText}>Lemon Restaurant</Text>
          </View>
          <View style={styles.cont2}>
             <Text style={styles.text2}>

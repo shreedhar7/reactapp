@@ -71,7 +71,7 @@ const Home = ({navigation}) => {
          };
          const order = () => {
 
-           navigation.navigate( 'Search' )
+           navigation.navigate( 'Cart' )
          };
    return (
 
@@ -85,7 +85,7 @@ const Home = ({navigation}) => {
             <View style={styles.cont2}>
 
                <Text style={styles.name}>
-                  Modo restaurant
+                  Lemon restaurant
                </Text>
                <Text style={styles.name2}>
                <Feather name="map-pin" size={20} color="white" />
@@ -139,7 +139,7 @@ styles= StyleSheet.create({
    },
    headerImage : {
          resizeMode: 'cover',
-        height: 51,
+        height: 50,
         width: 50,
         marginHorizontal : 2,
 

@@ -43,7 +43,7 @@ const App = ({navigation}) => {
          <StatusBar  backgroundColor = "#ff0000"  barStyle = "dark-content"   />
          <View style={styles.header}>
             <Image style={styles.headerImage} source={require('../assets/modo-logo.png')}/>
-            <Text style={styles.headerText}>Modo Restaurant</Text>
+            <Text style={styles.headerText}>Lemon Restaurant</Text>
          </View>
          <View style={styles.cont2}>
             <Text style={styles.text2}>
