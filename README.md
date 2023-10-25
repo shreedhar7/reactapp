@@ -1,3 +1,3 @@
 # reactapp 
 Developer - Shreedhar ....
-email - shreedhar@onemodo.com
+email - shreedharsree799@gmail.com
